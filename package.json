@@ -4,7 +4,8 @@
   "description": "A sleek, responsive, and welcoming music album review website dedicated to **celebrating full-length records, honest musical opinions, and sonic discovery across every genre**.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'No build required'"
   },
   "repository": {
     "type": "git",
