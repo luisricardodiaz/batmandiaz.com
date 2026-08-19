@@ -1,0 +1,138 @@
+/* ==========================================================================
+   responsive.css - Media Queries & Mobile / Tablet Optimizations
+   Luis R Diaz Beutel - Personal Music Album Review Blog
+   ========================================================================== */
+
+/* Tablet & Smaller Screens (< 1024px) */
+@media (max-width: 1024px) {
+  .hero-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .hero-vinyl-wrapper {
+    max-width: 320px;
+    order: -1;
+  }
+
+  .modal-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-left-col {
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .ethos-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-genres-list {
+    justify-content: center;
+  }
+}
+
+/* Mobile Screens (< 768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 4.25rem;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-card);
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .hero-content-wrapper {
+    padding: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    justify-content: center;
+  }
+
+  .search-sort-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .filter-controls-container {
+    padding: 1rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .criteria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-container {
+    max-height: 95vh;
+    border-radius: var(--radius-md);
+  }
+
+  .shelf-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .site-header,
+  .filter-controls-container,
+  .shelf-section,
+  .theme-toggle-btn,
+  .modal-overlay,
+  .footer-back-top {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .review-card {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+}

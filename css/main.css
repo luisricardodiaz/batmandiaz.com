@@ -1,0 +1,308 @@
+/* ==========================================================================
+   main.css - Core Tokens, Base Styles, Typography, and Themes
+   Luis R Diaz Beutel - Personal Music Album Review Blog
+   ========================================================================== */
+
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #0e1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-card: rgba(22, 27, 34, 0.85);
+  --bg-card-hover: rgba(33, 38, 45, 0.95);
+  --bg-glass: rgba(14, 17, 23, 0.75);
+  --bg-modal-overlay: rgba(5, 7, 10, 0.82);
+
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --text-accent: #f9c74f;
+
+  --border-subtle: rgba(240, 246, 252, 0.08);
+  --border-card: rgba(240, 246, 252, 0.12);
+  --border-focus: #f9c74f;
+
+  --accent-gold: #f9c74f;
+  --accent-gold-glow: rgba(249, 199, 79, 0.25);
+  --accent-orange: #f8961e;
+  --accent-red: #f94144;
+  --accent-teal: #43aa8b;
+  --accent-blue: #4cc9f0;
+  --accent-purple: #9d4edd;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-vinyl: -10px 0 25px rgba(0, 0, 0, 0.7);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-thought: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --max-width: 1280px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f3f5;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(248, 249, 250, 0.85);
+  --bg-modal-overlay: rgba(15, 23, 42, 0.65);
+
+  --text-primary: #1a1e24;
+  --text-secondary: #5c6773;
+  --text-muted: #8c96a3;
+  --text-accent: #d97706;
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-card: rgba(0, 0, 0, 0.08);
+  --border-focus: #d97706;
+
+  --accent-gold: #d97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.2);
+  --accent-orange: #ea580c;
+  --accent-red: #dc2626;
+  --accent-teal: #0d9488;
+  --accent-blue: #0284c7;
+  --accent-purple: #7e22ce;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-vinyl: -8px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Container Layout */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Star Rating System Tokens */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  color: var(--accent-gold);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.star-rating .star-full,
+.star-rating .star-half {
+  color: var(--accent-gold);
+  filter: drop-shadow(0 1px 4px var(--accent-gold-glow));
+}
+
+.star-rating .star-empty {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(249, 199, 79, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid rgba(249, 199, 79, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.badge-masterpiece {
+  background: rgba(249, 199, 79, 0.18);
+  color: #ffd166;
+  border-color: rgba(249, 199, 79, 0.5);
+  box-shadow: 0 0 12px rgba(249, 199, 79, 0.2);
+}
+
+.badge-outstanding {
+  background: rgba(67, 170, 139, 0.15);
+  color: #52b788;
+  border-color: rgba(67, 170, 139, 0.4);
+}
+
+.badge-excellent {
+  background: rgba(76, 201, 240, 0.15);
+  color: #48cae4;
+  border-color: rgba(76, 201, 240, 0.4);
+}
+
+.badge-great {
+  background: rgba(157, 78, 221, 0.15);
+  color: #c77dff;
+  border-color: rgba(157, 78, 221, 0.4);
+}
+
+.badge-good {
+  background: rgba(248, 150, 30, 0.15);
+  color: #f77f00;
+  border-color: rgba(248, 150, 30, 0.4);
+}
+
+/* Vinyl Grooves Graphic Animation */
+.vinyl-disc {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  right: -25%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a2a2a 0%, #151515 25%, #080808 60%, #000000 100%);
+  box-shadow: var(--shadow-vinyl);
+  z-index: 1;
+  transition: transform var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vinyl-disc::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    transparent 0,
+    transparent 4px,
+    rgba(255, 255, 255, 0.04) 5px,
+    transparent 6px
+  );
+}
+
+.vinyl-label {
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: var(--accent-gold);
+  border: 3px solid #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vinyl-label-hole {
+  width: 22%;
+  height: 22%;
+  border-radius: 50%;
+  background: #0e1117;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Spinning Animation */
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spinVinyl 12s linear infinite;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
