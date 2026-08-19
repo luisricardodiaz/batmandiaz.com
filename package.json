@@ -1,0 +1,21 @@
+{
+  "name": "batmandiaz",
+  "version": "1.0.0",
+  "description": "A sleek, responsive, and welcoming music album review website dedicated to **celebrating full-length records, honest musical opinions, and sonic discovery across every genre**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisricardodiaz/batmandiaz.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/luisricardodiaz/batmandiaz.com/issues"
+  },
+  "homepage": "https://github.com/luisricardodiaz/batmandiaz.com#readme"
+}
