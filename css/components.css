@@ -120,6 +120,25 @@
   color: #d97706;
 }
 
+[data-theme="dark"] .brand-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  /* Replaced #111 and #222 with light off-white and soft gray tones (#f8f9fa and #e9ecef) */
+  background: radial-gradient(circle, #f9c74f 30%, #f8f9fa 31%, #e9ecef 70%, #f9c74f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Slightly boosted glow contrast for visibility against dark backgrounds */
+  box-shadow: 0 0 12px rgba(249, 199, 79, 0.45);
+  transition: transform var(--transition-smooth);
+}
+
+[data-theme="dark"] .brand-icon circle {
+  stroke: white;
+
+}
+
 .mobile-menu-btn {
   display: none;
   width: 40px;
@@ -215,27 +234,6 @@
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
-}
-
-.hero-rating-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-.hero-star-display {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 1.4rem;
-}
-
-.hero-score-num {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--text-primary);
 }
 
 .hero-quote {
@@ -547,13 +545,6 @@
   transform: scale(1.05);
 }
 
-.card-rating-overlay {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 3;
-}
-
 .card-year-badge {
   position: absolute;
   bottom: 1rem;
@@ -589,15 +580,6 @@
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 0.85rem;
-}
-
-.card-stars-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.85rem;
-  border-bottom: 1px solid var(--border-subtle);
 }
 
 .card-quote {

@@ -90,28 +90,13 @@ export class ReviewModal {
     const metaTracks = document.getElementById('modalMetaTracks');
     const metaGenres = document.getElementById('modalMetaGenres');
 
-    // Title & Score
-    const titleElem = document.getElementById('modalTitle');
-    const artistElem = document.getElementById('modalArtist');
-    const starsElem = document.getElementById('modalStars');
-    const scoreElem = document.getElementById('modalScore');
-    const badgeElem = document.getElementById('modalBadge');
-
-    // Criteria meters
-    const sonicsBar = document.getElementById('modalMeterSonics');
-    const sonicsVal = document.getElementById('modalValSonics');
-    const emotionBar = document.getElementById('modalMeterEmotion');
-    const emotionVal = document.getElementById('modalValEmotion');
-    const songwritingBar = document.getElementById('modalMeterSongwriting');
-    const songwritingVal = document.getElementById('modalValSongwriting');
-    const replayBar = document.getElementById('modalMeterReplay');
-    const replayVal = document.getElementById('modalValReplay');
-
     // Highlights
     const standoutsContainer = document.getElementById('modalStandouts');
     const gemsContainer = document.getElementById('modalGems');
 
     // Essay & Links
+    const titleElem = document.getElementById('modalTitle');
+    const artistElem = document.getElementById('modalArtist');
     const essayElem = document.getElementById('modalEssay');
     const spotifyLink = document.getElementById('modalLinkSpotify');
     const appleLink = document.getElementById('modalLinkApple');
@@ -142,34 +127,6 @@ export class ReviewModal {
 
     if (titleElem) titleElem.textContent = review.title;
     if (artistElem) artistElem.textContent = review.artist;
-
-    if (starsElem) {
-      starsElem.innerHTML = this.renderStarsHTML(review.rating);
-    }
-    if (scoreElem) scoreElem.textContent = `${review.rating.toFixed(1)} / 5.0`;
-
-    if (badgeElem) {
-      badgeElem.textContent = review.ratingCategory;
-      badgeElem.className = `rating-badge ${this.getBadgeClass(review.rating)}`;
-    }
-
-    // Criteria breakdown calculation (percentage out of 5.0)
-    if (sonicsBar && sonicsVal && review.criteria?.sonics) {
-      sonicsVal.textContent = `${review.criteria.sonics.toFixed(1)} / 5.0`;
-      sonicsBar.style.width = `${(review.criteria.sonics / 5.0) * 100}%`;
-    }
-    if (emotionBar && emotionVal && review.criteria?.emotion) {
-      emotionVal.textContent = `${review.criteria.emotion.toFixed(1)} / 5.0`;
-      emotionBar.style.width = `${(review.criteria.emotion / 5.0) * 100}%`;
-    }
-    if (songwritingBar && songwritingVal && review.criteria?.songwriting) {
-      songwritingVal.textContent = `${review.criteria.songwriting.toFixed(1)} / 5.0`;
-      songwritingBar.style.width = `${(review.criteria.songwriting / 5.0) * 100}%`;
-    }
-    if (replayBar && replayVal && review.criteria?.replay) {
-      replayVal.textContent = `${review.criteria.replay.toFixed(1)} / 5.0`;
-      replayBar.style.width = `${(review.criteria.replay / 5.0) * 100}%`;
-    }
 
     // Standout tracks
     if (standoutsContainer) {
@@ -213,32 +170,6 @@ export class ReviewModal {
         });
       };
     }
-  }
-
-  renderStarsHTML(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalf = rating % 1 >= 0.5;
-    let html = '';
-
-    for (let i = 0; i < fullStars; i++) {
-      html += '<span class="star-full" aria-hidden="true">★</span>';
-    }
-    if (hasHalf) {
-      html += '<span class="star-half" aria-hidden="true">½</span>';
-    }
-    const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
-    for (let i = 0; i < emptyStars; i++) {
-      html += '<span class="star-empty" aria-hidden="true">☆</span>';
-    }
-    return html;
-  }
-
-  getBadgeClass(rating) {
-    if (rating >= 4.9) return 'badge-masterpiece';
-    if (rating >= 4.4) return 'badge-outstanding';
-    if (rating >= 3.9) return 'badge-excellent';
-    if (rating >= 3.4) return 'badge-great';
-    return 'badge-good';
   }
 
   formatReviewMarkdown(markdownText) {

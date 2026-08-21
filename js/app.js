@@ -13,7 +13,6 @@ class MusicBlogApp {
     this.state = {
       searchQuery: '',
       selectedGenre: 'All',
-      selectedRating: 'all',
       sortBy: 'newest',
       theme: localStorage.getItem('lrd_music_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
     };
@@ -48,35 +47,6 @@ class MusicBlogApp {
     this.applyTheme(nextTheme);
   }
 
-  /* ------------------------------------------------------------------------
-     2. Render Helpers (Stars, Badges)
-     ------------------------------------------------------------------------ */
-  renderStars(rating) {
-    const fullStars = Math.floor(rating);
-    const hasHalf = rating % 1 >= 0.5;
-    let html = '<span class="star-rating" aria-label="' + rating.toFixed(1) + ' out of 5 stars">';
-
-    for (let i = 0; i < fullStars; i++) {
-      html += '<span class="star-full" aria-hidden="true">★</span>';
-    }
-    if (hasHalf) {
-      html += '<span class="star-half" aria-hidden="true">½</span>';
-    }
-    const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
-    for (let i = 0; i < emptyStars; i++) {
-      html += '<span class="star-empty" aria-hidden="true">☆</span>';
-    }
-    html += '</span>';
-    return html;
-  }
-
-  getBadgeClass(rating) {
-    if (rating >= 4.9) return 'badge-masterpiece';
-    if (rating >= 4.4) return 'badge-outstanding';
-    if (rating >= 3.9) return 'badge-excellent';
-    if (rating >= 3.4) return 'badge-great';
-    return 'badge-good';
-  }
 
   /* ------------------------------------------------------------------------
      3. The Listening Room / Ethos Section
@@ -109,14 +79,6 @@ class MusicBlogApp {
           </div>
           <h2 class="hero-album-title">${featured.title}</h2>
           <div class="hero-artist">${featured.artist}</div>
-
-          <div class="hero-rating-row">
-            <div class="hero-star-display">
-              ${this.renderStars(featured.rating)}
-            </div>
-            <span class="hero-score-num">${featured.rating.toFixed(1)} / 5.0</span>
-            <span class="rating-badge ${this.getBadgeClass(featured.rating)}">${featured.ratingCategory}</span>
-          </div>
 
           <blockquote class="hero-quote">
             "${featured.summaryQuote}"
@@ -219,22 +181,11 @@ class MusicBlogApp {
         }
       }
 
-      // Rating filter
-      if (this.state.selectedRating !== 'all') {
-        if (this.state.selectedRating === '5.0' && r.rating < 5.0) return false;
-        if (this.state.selectedRating === '4.5' && (r.rating < 4.5 || r.rating >= 5.0)) return false;
-        if (this.state.selectedRating === '4.0' && (r.rating < 4.0 || r.rating >= 4.5)) return false;
-        if (this.state.selectedRating === '3.5' && r.rating >= 4.0) return false;
-      }
-
       return true;
     }).sort((a, b) => {
       // Sorting
       if (this.state.sortBy === 'newest') {
         return new Date(b.reviewDate) - new Date(a.reviewDate);
-      }
-      if (this.state.sortBy === 'highest-rating') {
-        return b.rating - a.rating;
       }
       if (this.state.sortBy === 'release-year') {
         return b.releaseYear - a.releaseYear;
@@ -275,13 +226,10 @@ class MusicBlogApp {
       document.getElementById('resetFiltersBtn')?.addEventListener('click', () => {
         this.state.searchQuery = '';
         this.state.selectedGenre = 'All';
-        this.state.selectedRating = 'all';
         const searchInput = document.getElementById('albumSearchInput');
         const clearBtn = document.getElementById('searchClearBtn');
-        const ratingSelect = document.getElementById('ratingFilterSelect');
         if (searchInput) searchInput.value = '';
         if (clearBtn) clearBtn.classList.remove('active');
-        if (ratingSelect) ratingSelect.value = 'all';
         this.renderGenrePills();
         this.renderReviewsGrid();
       });
@@ -293,20 +241,12 @@ class MusicBlogApp {
         <div class="card-cover-container">
           <img class="card-cover-img" src="${r.coverUrl}" alt="${r.title} by ${r.artist}" loading="lazy"
                data-fetch-artist="${r.artist}" data-fetch-album="${r.title}" />
-          <div class="card-rating-overlay">
-            <span class="rating-badge ${this.getBadgeClass(r.rating)}">${r.rating.toFixed(1)} ★</span>
-          </div>
           <span class="card-year-badge">${r.releaseYear}</span>
         </div>
 
         <div class="card-body">
           <h3 class="card-title">${r.title}</h3>
           <div class="card-artist">${r.artist}</div>
-
-          <div class="card-stars-row">
-            ${this.renderStars(r.rating)}
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">${r.ratingCategory}</span>
-          </div>
 
           <p class="card-quote">"${r.summaryQuote}"</p>
 
@@ -403,12 +343,6 @@ class MusicBlogApp {
         searchInput.focus();
         this.renderReviewsGrid();
       }
-    });
-
-    // Rating Filter Select
-    document.getElementById('ratingFilterSelect')?.addEventListener('change', (e) => {
-      this.state.selectedRating = e.target.value;
-      this.renderReviewsGrid();
     });
 
     // Sort Select

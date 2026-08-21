@@ -122,17 +122,8 @@
               <button id="searchClearBtn" class="search-clear-btn" aria-label="Clear search">✕</button>
             </div>
 
-            <select id="ratingFilterSelect" class="filter-select" aria-label="Filter by star rating">
-              <option value="all">⭐ All Albums</option>
-              <option value="5.0">★★★★★ 5.0 (All-Time Favorites)</option>
-              <option value="4.5">★★★★½ 4.5 (Loved It)</option>
-              <option value="4.0">★★★★☆ 4.0 (Really Enjoyed)</option>
-              <option value="3.5">★★★½☆ ≤ 3.5 (Good Spins)</option>
-            </select>
-
             <select id="sortSelect" class="filter-select" aria-label="Sort album thoughts">
               <option value="newest">🕒 Latest Thoughts</option>
-              <option value="highest-rating">⭐ Highest Rated</option>
               <option value="release-year">📅 Release Year</option>
               <option value="artist">🔤 Artist Name</option>
             </select>
@@ -275,97 +266,46 @@
             <h2 class="modal-album-title" id="modalTitle">Album Title</h2>
             <div class="modal-artist" id="modalArtist">Artist Name</div>
 
-            <div class="modal-score-row">
-              <div id="modalStars"></div>
-              <span id="modalScore"
-                style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 800;"></span>
-              <span id="modalBadge" class="rating-badge"></span>
-            </div>
-          </div>
-
-          <!-- Listening Impressions 4-Dimension Breakdown -->
-          <div class="criteria-breakdown-box">
-            <div class="criteria-title">Listening Impressions & Vibe</div>
-            <div class="criteria-grid">
-              <div class="criteria-item">
-                <div class="criteria-label-row">
-                  <span>Sound & Production</span>
-                  <span id="modalValSonics">5.0 / 5.0</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill" id="modalMeterSonics"></div>
-                </div>
+            <!-- Standout Tracks -->
+            <div class="standout-tracks-box">
+              <div class="standout-group">
+                <span class="standout-label">✨ Favorite Tracks:</span>
+                <div id="modalStandouts" style="display: inline-flex; flex-wrap: wrap; gap: 0.4rem;"></div>
               </div>
-              <div class="criteria-item">
-                <div class="criteria-label-row">
-                  <span>Mood & Feeling</span>
-                  <span id="modalValEmotion">5.0 / 5.0</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill" id="modalMeterEmotion"></div>
-                </div>
-              </div>
-              <div class="criteria-item">
-                <div class="criteria-label-row">
-                  <span>Songwriting & Flow</span>
-                  <span id="modalValSongwriting">5.0 / 5.0</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill" id="modalMeterSongwriting"></div>
-                </div>
-              </div>
-              <div class="criteria-item">
-                <div class="criteria-label-row">
-                  <span>Replay & Enjoyment</span>
-                  <span id="modalValReplay">5.0 / 5.0</span>
-                </div>
-                <div class="meter-track">
-                  <div class="meter-fill" id="modalMeterReplay"></div>
-                </div>
+              <div class="standout-group">
+                <span class="standout-label">🌟 Special Moments:</span>
+                <div id="modalGems" style="display: inline-flex; flex-wrap: wrap; gap: 0.4rem;"></div>
               </div>
             </div>
-          </div>
 
-          <!-- Standout Tracks -->
-          <div class="standout-tracks-box">
-            <div class="standout-group">
-              <span class="standout-label">✨ Favorite Tracks:</span>
-              <div id="modalStandouts" style="display: inline-flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+            <!-- Full Review Content -->
+            <article class="modal-review-essay" id="modalEssay">
+              <!-- Populated dynamically -->
+            </article>
+
+            <div class="modal-footer-actions">
+              <button class="btn-secondary" id="modalShareBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+                Copy Link
+              </button>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">The Listening Room • Music Thoughts</span>
             </div>
-            <div class="standout-group">
-              <span class="standout-label">🌟 Special Moments:</span>
-              <div id="modalGems" style="display: inline-flex; flex-wrap: wrap; gap: 0.4rem;"></div>
-            </div>
-          </div>
-
-          <!-- Full Review Content -->
-          <article class="modal-review-essay" id="modalEssay">
-            <!-- Populated dynamically -->
-          </article>
-
-          <div class="modal-footer-actions">
-            <button class="btn-secondary" id="modalShareBtn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-              Copy Link
-            </button>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">The Listening Room • Music Thoughts</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Toast Notification Container -->
-  <div id="siteToast" class="toast" role="status" aria-live="polite"></div>
+    <!-- Toast Notification Container -->
+    <div id="siteToast" class="toast" role="status" aria-live="polite"></div>
 
-  <!-- Main JavaScript Module -->
-  <script type="module" src="js/app.js"></script>
+    <!-- Main JavaScript Module -->
+    <script type="module" src="js/app.js"></script>
 </body>
 
 </html>

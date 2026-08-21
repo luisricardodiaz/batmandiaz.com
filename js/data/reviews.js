@@ -1,9 +1,6 @@
 /**
  * reviews.js - Music Album Reviews Dataset
  * Curated for Luis R Diaz Beutel's Personal Music Blog
- * 
- * Rating Philosophy: 5-Star System (Constructive & Holistic Critique)
- * 5.0 = Masterpiece | 4.5 = Outstanding | 4.0 = Excellent | 3.5 = Great/Worthwhile | 3.0 = Good/Promising
  */
 
 export const STOCK_CD_IMAGE = 'assets/images/cd-stock.svg';
@@ -63,8 +60,6 @@ export const reviews = [
     artist: "Kendrick Lamar",
     releaseYear: 2015,
     reviewDate: "2026-08-15",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Hip-Hop", "Jazz", "Funk", "Soul"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Kendrick Lamar - To Pimp a Butterfly CD",
@@ -79,12 +74,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/to-pimp-a-butterfly/1440828886",
       youtube: "https://www.youtube.com/results?search_query=kendrick+lamar+to+pimp+a+butterfly+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 4.8
-    },
     summaryQuote: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
     content: `
 
@@ -97,8 +86,6 @@ export const reviews = [
     artist: "Radiohead",
     releaseYear: 2007,
     reviewDate: "2026-08-10",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Art Rock", "Alternative", "Indie"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Radiohead - In Rainbows CD",
@@ -113,12 +100,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/in-rainbows/1109714933",
       youtube: "https://www.youtube.com/results?search_query=radiohead+in+rainbows+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 5.0
-    },
     summaryQuote: "",
     content: `
 
@@ -131,8 +112,6 @@ export const reviews = [
     artist: "Miles Davis",
     releaseYear: 1959,
     reviewDate: "2026-07-28",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Jazz", "Cool Jazz"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Miles Davis - Kind of Blue CD",
@@ -147,12 +126,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/kind-of-blue/268443092",
       youtube: "https://www.youtube.com/results?search_query=miles+davis+kind+of+blue+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 5.0
-    },
     summaryQuote: "",
     content: `
 
@@ -165,8 +138,6 @@ export const reviews = [
     artist: "Rosalía",
     releaseYear: 2022,
     reviewDate: "2026-07-15",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Latin", "Electronic", "Pop"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Rosalía - MOTOMAMI CD",
@@ -181,12 +152,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/motomami/1607918350",
       youtube: "https://www.youtube.com/results?search_query=rosalia+motomami+full+album"
     },
-    criteria: {
-      sonics: 4.8,
-      emotion: 4.5,
-      songwriting: 4.4,
-      replay: 4.7
-    },
     summaryQuote: "",
     content: `
 
@@ -199,8 +164,6 @@ export const reviews = [
     artist: "Daft Punk",
     releaseYear: 2013,
     reviewDate: "2026-07-02",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Electronic", "R&B / Soul"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Daft Punk - Random Access Memories CD",
@@ -215,12 +178,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/random-access-memories/617154241",
       youtube: "https://www.youtube.com/results?search_query=daft+punk+random+access+memories+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 4.8,
-      songwriting: 4.9,
-      replay: 5.0
-    },
     summaryQuote: "",
     content: `
     `
@@ -232,8 +189,6 @@ export const reviews = [
     artist: "Fleetwood Mac",
     releaseYear: 1977,
     reviewDate: "2026-06-20",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Classic Rock", "Pop"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Fleetwood Mac - Rumours CD",
@@ -248,12 +203,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/rumours/594061854",
       youtube: "https://www.youtube.com/results?search_query=fleetwood+mac+rumours+full+album"
     },
-    criteria: {
-      sonics: 4.9,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 5.0
-    },
     summaryQuote: "",
     content: `
 
@@ -266,8 +215,6 @@ export const reviews = [
     artist: "Aphex Twin",
     releaseYear: 1992,
     reviewDate: "2026-06-05",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Ambient / IDM", "Electronic"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Aphex Twin - Selected Ambient Works CD",
@@ -282,12 +229,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/selected-ambient-works-85-92/282559693",
       youtube: "https://www.youtube.com/results?search_query=aphex+twin+selected+ambient+works+85-92"
     },
-    criteria: {
-      sonics: 4.5,
-      emotion: 4.8,
-      songwriting: 4.5,
-      replay: 4.6
-    },
     summaryQuote: "",
     content: `
 
@@ -300,8 +241,6 @@ export const reviews = [
     artist: "Chet Baker",
     releaseYear: 1954,
     reviewDate: "2026-05-18",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Jazz"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Chet Baker Sings CD",
@@ -316,12 +255,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/chet-baker-sings/1440835154",
       youtube: "https://www.youtube.com/results?search_query=chet+baker+sings+full+album"
     },
-    criteria: {
-      sonics: 4.3,
-      emotion: 5.0,
-      songwriting: 4.7,
-      replay: 4.8
-    },
     summaryQuote: "",
     content: `
     `
@@ -333,8 +266,6 @@ export const reviews = [
     artist: "Pink Floyd",
     releaseYear: 1975,
     reviewDate: "2026-05-02",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Art Rock", "Classic Rock"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Pink Floyd - Wish You Were Here CD",
@@ -349,12 +280,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/wish-you-were-here/1065973975",
       youtube: "https://www.youtube.com/results?search_query=pink+floyd+wish+you+were+here+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 5.0,
-      songwriting: 4.9,
-      replay: 4.8
-    },
     summaryQuote: "",
     content: `
     `
@@ -366,8 +291,6 @@ export const reviews = [
     artist: "Slowdive",
     releaseYear: 1993,
     reviewDate: "2026-04-14",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Shoegaze", "Indie"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Slowdive - Souvlaki CD",
@@ -382,12 +305,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/souvlaki/292885238",
       youtube: "https://www.youtube.com/results?search_query=slowdive+souvlaki+full+album"
     },
-    criteria: {
-      sonics: 4.8,
-      emotion: 4.9,
-      songwriting: 4.4,
-      replay: 4.7
-    },
     summaryQuote: "",
     content: `
 
@@ -400,8 +317,6 @@ export const reviews = [
     artist: "Milton Nascimento & Lô Borges",
     releaseYear: 1972,
     reviewDate: "2026-03-22",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["Latin", "Art Rock", "Jazz"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Clube da Esquina CD",
@@ -416,12 +331,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/clube-da-esquina/714264627",
       youtube: "https://www.youtube.com/results?search_query=clube+da+esquina+milton+nascimento+full+album"
     },
-    criteria: {
-      sonics: 4.9,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 4.8
-    },
     summaryQuote: "",
     content: `
     `
@@ -433,8 +342,6 @@ export const reviews = [
     artist: "Metallica",
     releaseYear: 1986,
     reviewDate: "2026-03-05",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Metal", "Classic Rock"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Metallica - Master of Puppets CD",
@@ -449,12 +356,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/master-of-puppets/579372950",
       youtube: "https://www.youtube.com/results?search_query=metallica+master+of+puppets+full+album"
     },
-    criteria: {
-      sonics: 4.6,
-      emotion: 4.7,
-      songwriting: 4.8,
-      replay: 4.6
-    },
     summaryQuote: "",
     content: `
     `
@@ -466,8 +367,6 @@ export const reviews = [
     artist: "Frank Ocean",
     releaseYear: 2016,
     reviewDate: "2026-02-18",
-    rating: 5.0,
-    ratingCategory: "All-Time Favorite",
     genres: ["R&B / Soul", "Indie", "Pop"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Frank Ocean - Blonde CD",
@@ -482,12 +381,6 @@ export const reviews = [
       apple: "https://music.apple.com/us/album/blonde/1146195596",
       youtube: "https://www.youtube.com/results?search_query=frank+ocean+blonde+full+album"
     },
-    criteria: {
-      sonics: 5.0,
-      emotion: 5.0,
-      songwriting: 5.0,
-      replay: 5.0
-    },
     summaryQuote: "",
     content: `
 
@@ -500,8 +393,6 @@ export const reviews = [
     artist: "Joy Division",
     releaseYear: 1979,
     reviewDate: "2026-01-30",
-    rating: 4.5,
-    ratingCategory: "Loved It",
     genres: ["Art Rock", "Indie"],
     coverUrl: STOCK_CD_IMAGE,
     coverAlt: "Joy Division - Unknown Pleasures CD",
@@ -515,12 +406,6 @@ export const reviews = [
       spotify: "https://open.spotify.com/album/0NgMgoxGQwK0G3h0mJgP7E",
       apple: "https://music.apple.com/us/album/unknown-pleasures/404302329",
       youtube: "https://www.youtube.com/results?search_query=joy+division+unknown+pleasures+full+album"
-    },
-    criteria: {
-      sonics: 4.8,
-      emotion: 4.9,
-      songwriting: 4.5,
-      replay: 4.4
     },
     summaryQuote: "",
     content: `

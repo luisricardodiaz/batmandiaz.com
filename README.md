@@ -9,16 +9,13 @@ A sleek, responsive, and welcoming music blog dedicated to **celebrating full-le
 - **💿 Clean Vector CD Artwork**:
   - Crisp, iridescent vector **Compact Disc** graphic with metallic diffraction and realistic details.
   - Square 1:1 CD jewel case card proportions.
-- **⭐ 5-Star Rating System**:
-  - Clear 5-star ratings with whole and half-star precision (`★★★★★ 5.0`, `★★★★½ 4.5`, `★★★★☆ 4.0`, etc.).
 - **🔍 Real-Time Search & Filtering**:
   - Instant search across album titles, artist names, release years, genres, and review content.
   - Interactive **Genre Filter Pills** with real-time album counters.
   - Star rating filter and multi-criteria sorting (Newest, Highest Rated, Release Year, Artist).
 - **📖 Rich Review Detail Modal**:
   - Full-length review essay.
-  - **4-Criteria Breakdown Meters** (*Sonics & Production*, *Emotion & Vibe*, *Songwriting & Flow*, *Replay & Impact*).
-  - 🔥 **Essential Standout Tracks** & 💡 **Hidden Gems**.
+- **🔥 Essential Standout Tracks** & 💡 **Hidden Gems**.
   - Direct streaming links to Spotify, Apple Music, and YouTube.
   - One-click shareable review links with deep-linking support (`#review-<id>`).
 - **📻 "Currently Spinning" Turntable Shelf**:
@@ -45,8 +42,6 @@ Then open [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## ✍️ How to Add or Edit Album Reviews
 
-All reviews are cleanly stored in [`js/data/reviews.js`](file:///Users/luisricardodiaz/Desktop/batmandiaz/js/data/reviews.js). You do **not** need to touch any HTML or CSS to publish a new review!
-
 ### Adding a New Review
 Open `js/data/reviews.js` and add an entry to the `reviews` array:
 
@@ -58,8 +53,6 @@ Open `js/data/reviews.js` and add an entry to the `reviews` array:
   artist: "Artist Name",
   releaseYear: 2024,
   reviewDate: "2026-08-19",
-  rating: 4.5, // 5.0, 4.5, 4.0, 3.5, or 3.0
-  ratingCategory: "Outstanding", // "Masterpiece", "Outstanding", "Excellent", "Great / Worthwhile", "Good / Promising"
   genres: ["Art Rock", "Electronic"],
   coverUrl: STOCK_CD_IMAGE, // Uses the vector CD graphic
   coverAlt: "Album Title by Artist Name CD",
@@ -73,13 +66,7 @@ Open `js/data/reviews.js` and add an entry to the `reviews` array:
     spotify: "https://open.spotify.com/album/...",
     apple: "https://music.apple.com/...",
     youtube: "https://www.youtube.com/..."
-  },
-  criteria: {
-    sonics: 4.8,      // Score out of 5.0
-    emotion: 4.6,     // Score out of 5.0
-    songwriting: 4.5, // Score out of 5.0
-    replay: 4.7       // Score out of 5.0
-  },
+  }
   summaryQuote: "A one-sentence summary capturing the core vibe and verdict of the album.",
   content: `
 Write your multi-paragraph review here. You can use standard markdown:
