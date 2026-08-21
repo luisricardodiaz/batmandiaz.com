@@ -56,8 +56,8 @@ export async function hydrateCovers(root = document) {
   await Promise.allSettled(
     [...imgs].map(async (img) => {
       const artist = img.dataset.fetchArtist;
-      const album  = img.dataset.fetchAlbum;
-      const url    = await fetchAlbumCover(artist, album);
+      const album = img.dataset.fetchAlbum;
+      const url = await fetchAlbumCover(artist, album);
       if (url) {
         img.src = url;
         img.removeAttribute('data-fetch-artist');
