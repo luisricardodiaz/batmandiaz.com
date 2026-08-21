@@ -1,4 +1,4 @@
-# 🎵 The Listening Room — Album Reviews & Music Opinions
+# 🎵 The Listening Room — Music Thoughts
 
 A sleek, responsive, and welcoming music album review website dedicated to **celebrating full-length records, honest musical opinions, and sonic discovery across every genre**.
 
